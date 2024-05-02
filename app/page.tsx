@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
       action: 'link',
       label: 'Add Higher Balance Checker',
       target:
-        'https://warpcast.com/~/add-cast-action?postUrl=https://voyagers-beta.vercel.app/api/action&name=Voyagers-Checker&icon=search&actionType=post',
+        `https://warpcast.com/~/add-cast-action?postUrl=https://i-choose-higher.vercel.app/api/action&name=⬆️stats by @heyshubh&icon=graph&actionType=post`,
 
     },
     {

@@ -1,13 +1,22 @@
 import { FrameRequest, getFrameMessage } from '@coinbase/onchainkit/frame';
 import { NextRequest, NextResponse } from 'next/server';
 import { gql, GraphQLClient } from "graphql-request";
+import {
+  validateFramesMessage,
+  ValidateFramesMessageInput,
+  ValidateFramesMessageOutput,
+  init
+} from "@airstack/frames";
 import axios from 'axios';
 const AIRSTACK_API_URL = "https://api.airstack.xyz/graphql";
 const AIRSTACK_API_KEY = process.env.AIRSTACK_API_KEY;
 
 export async function POST(req: NextRequest): Promise<any> {
+  init(process.env.AIRSTACK_API_KEY ?? "");
   const body: FrameRequest = await req.json();
-  console.log(body);
+
+  const res:any = await validateFramesMessage(body);
+  console.log("Res : ",res.message.data.fid);
   let fid = body.untrustedData.castId.fid;
   let totalHigherBalance = 0;
   const getFid = gql`

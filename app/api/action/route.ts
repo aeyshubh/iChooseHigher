@@ -70,17 +70,19 @@ query MyQuery {
   }
   console.log(totalHigherBalance.toFixed(2));
 
-  if(totalHigherBalance <= 5000){
+  if(totalHigherBalance <= 25000){
     return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Fish🐠]` }, { status: 200 });
   }
-  else if(totalHigherBalance >=5001 && totalHigherBalance <= 30000){ 
+  else if(totalHigherBalance >=25001 && totalHigherBalance <= 50000){ 
   return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Shrimp🦐]` }, { status: 200 });
-  }else if(totalHigherBalance >=30001 && totalHigherBalance <= 60000){
+  }else if(totalHigherBalance >=50001 && totalHigherBalance <= 100000){
     return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Dolphine🐬]` }, { status: 200 });
-  }else if(totalHigherBalance >=60001 && totalHigherBalance <= 100000){
+  }else if(totalHigherBalance >=100001 && totalHigherBalance <= 200000){
     return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Shark🦈]` }, { status: 200 });
-  }else if(totalHigherBalance >=100001){
+  }else if(totalHigherBalance >=200001 && totalHigherBalance <= 500000){
     return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Whale🐋]` }, { status: 200 });
+  }else if(totalHigherBalance >=500001){
+    return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Dragon🐉]` }, { status: 200 });
   }
 }
 

@@ -79,7 +79,11 @@ query MyQuery {
   }
   console.log(totalHigherBalance.toFixed(2));
 
-  if(totalHigherBalance <= 25000){
+  if(totalHigherBalance == 0){
+  
+    return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Lower⬇️]` }, { status: 200 });
+  
+  }else if(totalHigherBalance>=1 && totalHigherBalance <= 25000){
     return NextResponse.json({ message: `${profileName} has ${totalHigherBalance.toFixed(2)} [Fish🐠]` }, { status: 200 });
   }
   else if(totalHigherBalance >=25001 && totalHigherBalance <= 50000){ 
